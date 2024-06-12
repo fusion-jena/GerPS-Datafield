@@ -1,7 +1,13 @@
 # GerPS-Datafield
 
 ## abstract
-TODO
+The GerPS-Datafield is an extension for the [GerPs-Onto](https://w3id.org/GerPS-onto/ontology#). Besides the Procceses there are also forms, that contains the data that will be proccesed in Public Service. For this purpose there is the [XDatenfeld-Standard](https://www.xrepository.de/details/urn:xoev-de:fim:standard:xdatenfelder_2.0#version) as an [XöV](https://www.xoev.de/xoev-4987)-Standard. Its basicly an XML-protocoll for trasmitting data about these forms, but its not an semantic standard. So the GerPS-Datafield is the Semantic Version of this XDatenfeld-Standard. We integrated it in the GerPS-Onto to make this more interoperable and extend the possibilities to work with this semantic standards. 
+
+## important path in this Repo
+
+1. [competency Questions](docs/CQ/Answer/CQ_Questions.md)
+2. [Ontology](Ontologie/GerPS-Onto-Datenfeld.rdf)
+3. [Data](https://github.com/fusion-jena/GerPS-Datafield/tree/main/Ontologie/Data)
 
 ## running
 In the [Path](./Ontologie/Data) there are three example of XDatafield fiels for create die Population of the Ontologie. Upload these files in the [XUI](https://xui.simplex.fmi.uni-jena.de/xdatenfeld) by drag n' drob. Also you can use your own files or search for suitable Files Via the [Integration](https://xui.simplex.fmi.uni-jena.de/ximport) of the [XDatafield-Repostory](https://schema.fim.fitko.net/docs#/). After this you can Run the "Convert to ..." function and get the result in your preferd semantic format. Step by Step:
@@ -14,3 +20,7 @@ In the [Path](./Ontologie/Data) there are three example of XDatafield fiels for 
 
 ## Code
 The Code will be released at [openCode](https://gitlab.opencode.de/opendva) soon.
+
+## Lizenz
+
+TODO
