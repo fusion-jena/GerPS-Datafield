@@ -1,0 +1,2 @@
+<https://w3id.org/GerPS-onto/FIMDatenfelder/R00000042/1.0#J000014_0> <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000008> <https://test.schema-repository.fitko.dev/fields/baukasten/F00000467> .
+<https://w3id.org/GerPS-onto/FIMDatenfelder/R00000042/1.0#J000014_0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000014> .

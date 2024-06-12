@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://BPMNbasedOntology" uri="catalog-v001.xml"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1712827509630" name="http://elite.polito.it/ontologies/eupont.owl" uri="eupont.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1712827509630" name="http://www.semanticweb.org/raupach/ontologies/2024/2/untitled-ontology-17" uri="datafield_populated_interferred.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1712827509630" name="duplicate:https://w3id.org/GerPS-onto/FIMDatenfelder" uri="GerPS-Onto-Datenfeld.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1712827509630" name="duplicate:https://w3id.org/GerPS-onto/FIMDatenfelder" uri="datafield_populated.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1712827509630" name="https://w3id.org/GerPS-onto/ontology" uri="gerps-onto.owl"/>
+    </group>
+</catalog>

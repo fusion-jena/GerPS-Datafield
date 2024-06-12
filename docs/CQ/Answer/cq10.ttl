@@ -1,0 +1,3 @@
+<https://w3id.org/GerPS-onto/FIMDatenfelder/R00000042/1.0#J000022_0> <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000006> <https://test.schema-repository.fitko.dev/fields/baukasten/F00000462> .
+<https://w3id.org/GerPS-onto/FIMDatenfelder/R00000042/1.0#J000022_0> <http://elite.polito.it/ontologies/eupont.owl#value> "001" .
+<https://w3id.org/GerPS-onto/FIMDatenfelder/R00000042/1.0#J000022_0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000022> .
