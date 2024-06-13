@@ -574,4 +574,6 @@ WHERE {
 } 
 ```
 
-[Antwort](./cq20.csv)
+[Antwort](./cq2Version
+https://test.schema-repository.fitko.dev/fields/baukasten/F00000462/1.0
+0.csv)
