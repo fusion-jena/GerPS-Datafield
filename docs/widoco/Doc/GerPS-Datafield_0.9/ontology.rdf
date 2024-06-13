@@ -16,7 +16,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:ontology="https://w3id.org/GerPS-onto/ontology#">
     <owl:Ontology rdf:about="https://w3id.org/GerPS-onto/FIMDatenfelder#">
-        <owl:versionIRI rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder/0.8"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder/0.9"/>
         <owl:imports rdf:resource="http://elite.polito.it/ontologies/eupont.owl"/>
         <owl:imports rdf:resource="https://w3id.org/GerPS-onto/ontology#"/>
         <terms:creator>Maximilian Raupach</terms:creator>
@@ -118,7 +118,7 @@ SOFTWARE.</terms:license>
             <rdf:Description rdf:about="https://w3id.org/GerPS-onto/FIMDatenfelder#JP000010"/>
             <rdf:Description rdf:about="https://w3id.org/GerPS-onto/FIMDatenfelder#JP000011"/>
         </owl:propertyChainAxiom>
-        <terms:description xml:lang="en">A property, that connects a `Stammdatenschemata` or `element` with an `element`.</terms:description>
+        <rdfs:comment xml:lang="en">A property, that connects a `master data schema` or `element` with an `element`.</rdfs:comment>
         <rdfs:label xml:lang="en">contains</rdfs:label>
         <rdfs:label xml:lang="de">enthaelt</rdfs:label>
     </owl:ObjectProperty>
@@ -178,7 +178,7 @@ SOFTWARE.</terms:license>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000001"/>
-        <rdfs:comment xml:lang="en">A Property, that connects a `Stammdatenschemata` or `Element` with a `Rule`.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A Property, that connects a `master data schema` or `Element` with a `Rule`.</rdfs:comment>
         <rdfs:label xml:lang="en">has rule</rdfs:label>
         <rdfs:label xml:lang="de">hat Regel</rdfs:label>
     </owl:ObjectProperty>
@@ -272,7 +272,7 @@ SOFTWARE.</terms:license>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000029"/>
         <rdfs:range rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000003"/>
-        <rdfs:label xml:lang="en">Connection to the occurred element.</rdfs:label>
+        <rdfs:comment xml:lang="en">Connection to the occurred element.</rdfs:comment>
         <rdfs:label xml:lang="en">hasOccurenceElement</rdfs:label>
         <rdfs:label xml:lang="de">hat auftauchendes Element</rdfs:label>
     </owl:ObjectProperty>
@@ -570,7 +570,7 @@ SOFTWARE.</terms:license>
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">This is a Rule in FIM-Datenfelder. It describes the relation between elements of its Stammdatenschemata.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This is a Rule in FIM-Datenfelder. It describes the relation between elements of its master data schema.</rdfs:comment>
         <rdfs:label xml:lang="en">FIMRule</rdfs:label>
         <rdfs:label xml:lang="de">Regel</rdfs:label>
     </owl:Class>
@@ -614,7 +614,7 @@ SOFTWARE.</terms:license>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">This is a Summary of all `Datafield`,`DatafieldGroups` and `Rules`.</rdfs:comment>
         <rdfs:label xml:lang="de">Stammdatenschemata</rdfs:label>
-        <rdfs:label xml:lang="en">master data schemes</rdfs:label>
+        <rdfs:label xml:lang="en">master data schema</rdfs:label>
     </owl:Class>
     
 
@@ -672,7 +672,7 @@ SOFTWARE.</terms:license>
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">This a a Part of a `Stammdatenschemata` in FIM. It can be a `Datenfeld` or a `Datenfeldgruppe`.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This a a Part of a `master data schema` in FIM. It can be a `Datenfeld` or a `Datenfeldgruppe`.</rdfs:comment>
         <rdfs:label xml:lang="de">Element</rdfs:label>
         <rdfs:label xml:lang="en">element</rdfs:label>
     </owl:Class>
@@ -780,7 +780,7 @@ SOFTWARE.</terms:license>
                 <owl:allValuesFrom rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000009"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">This is a Trigger, that can hold a full `Condition`, including some `logicOperator`.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This is a Trigger, that can hold a full `Condition`, including some `logicOperators`.</rdfs:comment>
         <rdfs:label xml:lang="de">Komplexer Trigger</rdfs:label>
         <rdfs:label xml:lang="en">complex trigger</rdfs:label>
     </owl:Class>
@@ -798,7 +798,7 @@ SOFTWARE.</terms:license>
                 <owl:allValuesFrom rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000003"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <terms:description xml:lang="en">This is a `Action`, that can be performed on a `Element` from FIM-Datenfeld.</terms:description>
+        <rdfs:comment xml:lang="en">This is a `Action`, that can be performed on a `Element` from FIM-Datenfeld.</rdfs:comment>
         <rdfs:label xml:lang="en">Elementaction</rdfs:label>
         <rdfs:label xml:lang="de">element action</rdfs:label>
     </owl:Class>
@@ -810,7 +810,7 @@ SOFTWARE.</terms:license>
 
     <owl:Class rdf:about="https://w3id.org/GerPS-onto/FIMDatenfelder#J000009">
         <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/eupont.owl#Trigger"/>
-        <rdfs:comment xml:lang="en">This is a Condition, that holds `logicOperators`and Statements.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This is a Condition, that holds `logicOperators` and Statements.</rdfs:comment>
         <rdfs:label xml:lang="de">Bedingung</rdfs:label>
         <rdfs:label xml:lang="en">condition</rdfs:label>
     </owl:Class>
@@ -822,7 +822,7 @@ SOFTWARE.</terms:license>
 
     <owl:Class rdf:about="https://w3id.org/GerPS-onto/FIMDatenfelder#J000011">
         <rdfs:subClassOf rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000008"/>
-        <terms:description xml:lang="en">This is a `Action`, that can turn off or on a `Element` required property.</terms:description>
+        <rdfs:comment xml:lang="en">This is a `Action`, that can turn off or on a `Element` required property.</rdfs:comment>
         <rdfs:label xml:lang="de">Pflichtaktion</rdfs:label>
         <rdfs:label xml:lang="en">requried action</rdfs:label>
     </owl:Class>
@@ -834,7 +834,7 @@ SOFTWARE.</terms:license>
 
     <owl:Class rdf:about="https://w3id.org/GerPS-onto/FIMDatenfelder#J000012">
         <rdfs:subClassOf rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000011"/>
-        <terms:description xml:lang="en">This is a `Action`, that can turn off an `Element` required property.</terms:description>
+        <rdfs:comment xml:lang="en">This is a `Action`, that can turn off an `Element` required property.</rdfs:comment>
         <rdfs:label xml:lang="de">Pflicht ausstellen</rdfs:label>
         <rdfs:label xml:lang="en">turn required off</rdfs:label>
     </owl:Class>
@@ -846,7 +846,7 @@ SOFTWARE.</terms:license>
 
     <owl:Class rdf:about="https://w3id.org/GerPS-onto/FIMDatenfelder#J000014">
         <rdfs:subClassOf rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000011"/>
-        <terms:description xml:lang="en">This is a `Action`, that can turn on an `Element` required property.</terms:description>
+        <rdfs:comment xml:lang="en">This is a `Action`, that can turn on an `Element` required property.</rdfs:comment>
         <rdfs:label xml:lang="de">Pflicht einschalten</rdfs:label>
         <rdfs:label xml:lang="en">turn required on</rdfs:label>
     </owl:Class>
@@ -858,7 +858,7 @@ SOFTWARE.</terms:license>
 
     <owl:Class rdf:about="https://w3id.org/GerPS-onto/FIMDatenfelder#J000015">
         <rdfs:subClassOf rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000008"/>
-        <terms:description xml:lang="en">This is a `Action`, that can turn off or on an `Element` visibility property.</terms:description>
+        <rdfs:comment xml:lang="en">This is a `Action`, that can turn off or on an `Element` visibility property.</rdfs:comment>
         <rdfs:label xml:lang="de">Sichtbarkeitsaktion</rdfs:label>
         <rdfs:label xml:lang="en">visibility action</rdfs:label>
     </owl:Class>
@@ -870,7 +870,7 @@ SOFTWARE.</terms:license>
 
     <owl:Class rdf:about="https://w3id.org/GerPS-onto/FIMDatenfelder#J000016">
         <rdfs:subClassOf rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000015"/>
-        <terms:description xml:lang="en">This is a `Action`, that can turn off an `Element` visibility property.</terms:description>
+        <rdfs:comment xml:lang="en">This is a `Action`, that can turn off an `Element` visibility property.</rdfs:comment>
         <rdfs:label xml:lang="de">Sichtbarkeit anschalten</rdfs:label>
         <rdfs:label xml:lang="en">turn visibility on</rdfs:label>
     </owl:Class>
@@ -882,7 +882,7 @@ SOFTWARE.</terms:license>
 
     <owl:Class rdf:about="https://w3id.org/GerPS-onto/FIMDatenfelder#J000017">
         <rdfs:subClassOf rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000015"/>
-        <terms:description xml:lang="en">This is a `Action`, that can turn on an `Element` visibility property.</terms:description>
+        <rdfs:comment xml:lang="en">This is a `Action`, that can turn on an `Element` visibility property.</rdfs:comment>
         <rdfs:label xml:lang="de">Sichtbarkeit ausschalten</rdfs:label>
         <rdfs:label xml:lang="en">turn visibility on</rdfs:label>
     </owl:Class>
@@ -981,7 +981,7 @@ SOFTWARE.</terms:license>
 
     <owl:Class rdf:about="https://w3id.org/GerPS-onto/FIMDatenfelder#J000023">
         <rdfs:subClassOf rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000021"/>
-        <rdfs:comment xml:lang="en">This is a SubClass of `Statement`, that refers that the value of a `Datenfeld` not equals a static Value.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This is a SubClass of `Statement`, that refers that the value of a `datafield` not equals a static Value.</rdfs:comment>
         <rdfs:label xml:lang="de">Ungleichheit</rdfs:label>
         <rdfs:label xml:lang="en">not equals</rdfs:label>
     </owl:Class>
@@ -1029,7 +1029,7 @@ SOFTWARE.</terms:license>
 
     <owl:Class rdf:about="https://w3id.org/GerPS-onto/FIMDatenfelder#J000027">
         <rdfs:subClassOf rdf:resource="https://w3id.org/GerPS-onto/FIMDatenfelder#J000021"/>
-        <rdfs:comment xml:lang="en">This is a SubClass of `Statement`, that refers that the value of a `Datenfeld` lower equals a static Value.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This is a SubClass of `Statement`, that refers that the value of a `datafield` lower equals a static Value.</rdfs:comment>
         <rdfs:label xml:lang="de">kleiner gleich</rdfs:label>
         <rdfs:label xml:lang="en">lower Equals</rdfs:label>
     </owl:Class>
@@ -1082,6 +1082,7 @@ SOFTWARE.</terms:license>
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Describes how often an element occures in a datafieldgroupe or master data schema.</rdfs:comment>
         <rdfs:label xml:lang="de">Auftachen</rdfs:label>
         <rdfs:label xml:lang="en">Occurrence</rdfs:label>
     </owl:Class>

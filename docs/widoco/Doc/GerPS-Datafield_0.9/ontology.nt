@@ -1,5 +1,5 @@
 <https://w3id.org/GerPS-onto/FIMDatenfelder#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/GerPS-onto/FIMDatenfelder/0.8> .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/GerPS-onto/FIMDatenfelder/0.9> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#> <http://www.w3.org/2002/07/owl#imports> <http://elite.polito.it/ontologies/eupont.owl> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/GerPS-onto/ontology#> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#> <http://purl.org/dc/terms/creator> "Maximilian Raupach" .
@@ -57,7 +57,7 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
 _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000011> .
 _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#JP000001> <http://purl.org/dc/terms/description> "A property, that connects a `Stammdatenschemata` or `element` with an `element`."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#JP000001> <http://www.w3.org/2000/01/rdf-schema#comment> "A property, that connects a `master data schema` or `element` with an `element`."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000001> <http://www.w3.org/2000/01/rdf-schema#label> "contains"@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000001> <http://www.w3.org/2000/01/rdf-schema#label> "enthaelt"@de .
 # 
@@ -98,7 +98,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000003> .
 _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000005> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000001> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#JP000005> <http://www.w3.org/2000/01/rdf-schema#comment> "A Property, that connects a `Stammdatenschemata` or `Element` with a `Rule`."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#JP000005> <http://www.w3.org/2000/01/rdf-schema#comment> "A Property, that connects a `master data schema` or `Element` with a `Rule`."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000005> <http://www.w3.org/2000/01/rdf-schema#label> "has rule"@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000005> <http://www.w3.org/2000/01/rdf-schema#label> "hat Regel"@de .
 # 
@@ -164,7 +164,7 @@ _:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000011> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000011> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000029> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000011> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000003> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#JP000011> <http://www.w3.org/2000/01/rdf-schema#label> "Connection to the occurred element."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#JP000011> <http://www.w3.org/2000/01/rdf-schema#comment> "Connection to the occurred element."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000011> <http://www.w3.org/2000/01/rdf-schema#label> "hasOccurenceElement"@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000011> <http://www.w3.org/2000/01/rdf-schema#label> "hat auftauchendes Element"@de .
 # 
@@ -352,7 +352,7 @@ _:genid17 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/
 _:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid18 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/GerPS-onto/ontology#hat_datenfeldID> .
 _:genid18 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000001> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a Rule in FIM-Datenfelder. It describes the relation between elements of its Stammdatenschemata."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000001> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a Rule in FIM-Datenfelder. It describes the relation between elements of its master data schema."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000001> <http://www.w3.org/2000/01/rdf-schema#label> "FIMRule"@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000001> <http://www.w3.org/2000/01/rdf-schema#label> "Regel"@de .
 # 
@@ -381,7 +381,7 @@ _:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/GerPS-ont
 _:genid23 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000002> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a Summary of all `Datafield`,`DatafieldGroups` and `Rules`."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000002> <http://www.w3.org/2000/01/rdf-schema#label> "Stammdatenschemata"@de .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000002> <http://www.w3.org/2000/01/rdf-schema#label> "master data schemes"@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000002> <http://www.w3.org/2000/01/rdf-schema#label> "master data schema"@en .
 # 
 # https://w3id.org/GerPS-onto/FIMDatenfelder#J000003
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -418,7 +418,7 @@ _:genid30 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/
 _:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid31 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/GerPS-onto/ontology#hat_datenfeldID> .
 _:genid31 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000003> <http://www.w3.org/2000/01/rdf-schema#comment> "This a a Part of a `Stammdatenschemata` in FIM. It can be a `Datenfeld` or a `Datenfeldgruppe`."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000003> <http://www.w3.org/2000/01/rdf-schema#comment> "This a a Part of a `master data schema` in FIM. It can be a `Datenfeld` or a `Datenfeldgruppe`."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000003> <http://www.w3.org/2000/01/rdf-schema#label> "Element"@de .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000003> <http://www.w3.org/2000/01/rdf-schema#label> "element"@en .
 # 
@@ -486,7 +486,7 @@ _:genid40 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/GerPS-
 _:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid41 <http://www.w3.org/2002/07/owl#onProperty> <http://elite.polito.it/ontologies/eupont.owl#nominalTrigger> .
 _:genid41 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000009> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000007> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a Trigger, that can hold a full `Condition`, including some `logicOperator`."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000007> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a Trigger, that can hold a full `Condition`, including some `logicOperators`."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000007> <http://www.w3.org/2000/01/rdf-schema#label> "Komplexer Trigger"@de .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000007> <http://www.w3.org/2000/01/rdf-schema#label> "complex trigger"@en .
 # 
@@ -497,56 +497,56 @@ _:genid41 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/GerPS-
 _:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid42 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/GerPS-onto/FIMDatenfelder#JP000008> .
 _:genid42 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000003> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000008> <http://purl.org/dc/terms/description> "This is a `Action`, that can be performed on a `Element` from FIM-Datenfeld."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000008> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a `Action`, that can be performed on a `Element` from FIM-Datenfeld."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000008> <http://www.w3.org/2000/01/rdf-schema#label> "Elementaction"@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000008> <http://www.w3.org/2000/01/rdf-schema#label> "element action"@de .
 # 
 # https://w3id.org/GerPS-onto/FIMDatenfelder#J000009
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000009> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000009> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://elite.polito.it/ontologies/eupont.owl#Trigger> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000009> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a Condition, that holds `logicOperators`and Statements."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000009> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a Condition, that holds `logicOperators` and Statements."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000009> <http://www.w3.org/2000/01/rdf-schema#label> "Bedingung"@de .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000009> <http://www.w3.org/2000/01/rdf-schema#label> "condition"@en .
 # 
 # https://w3id.org/GerPS-onto/FIMDatenfelder#J000011
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000011> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000011> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000008> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000011> <http://purl.org/dc/terms/description> "This is a `Action`, that can turn off or on a `Element` required property."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000011> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a `Action`, that can turn off or on a `Element` required property."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000011> <http://www.w3.org/2000/01/rdf-schema#label> "Pflichtaktion"@de .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000011> <http://www.w3.org/2000/01/rdf-schema#label> "requried action"@en .
 # 
 # https://w3id.org/GerPS-onto/FIMDatenfelder#J000012
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000012> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000011> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000012> <http://purl.org/dc/terms/description> "This is a `Action`, that can turn off an `Element` required property."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000012> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a `Action`, that can turn off an `Element` required property."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000012> <http://www.w3.org/2000/01/rdf-schema#label> "Pflicht ausstellen"@de .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000012> <http://www.w3.org/2000/01/rdf-schema#label> "turn required off"@en .
 # 
 # https://w3id.org/GerPS-onto/FIMDatenfelder#J000014
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000014> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000014> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000011> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000014> <http://purl.org/dc/terms/description> "This is a `Action`, that can turn on an `Element` required property."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000014> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a `Action`, that can turn on an `Element` required property."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000014> <http://www.w3.org/2000/01/rdf-schema#label> "Pflicht einschalten"@de .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000014> <http://www.w3.org/2000/01/rdf-schema#label> "turn required on"@en .
 # 
 # https://w3id.org/GerPS-onto/FIMDatenfelder#J000015
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000015> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000015> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000008> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000015> <http://purl.org/dc/terms/description> "This is a `Action`, that can turn off or on an `Element` visibility property."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000015> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a `Action`, that can turn off or on an `Element` visibility property."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000015> <http://www.w3.org/2000/01/rdf-schema#label> "Sichtbarkeitsaktion"@de .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000015> <http://www.w3.org/2000/01/rdf-schema#label> "visibility action"@en .
 # 
 # https://w3id.org/GerPS-onto/FIMDatenfelder#J000016
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000016> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000016> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000015> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000016> <http://purl.org/dc/terms/description> "This is a `Action`, that can turn off an `Element` visibility property."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000016> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a `Action`, that can turn off an `Element` visibility property."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000016> <http://www.w3.org/2000/01/rdf-schema#label> "Sichtbarkeit anschalten"@de .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000016> <http://www.w3.org/2000/01/rdf-schema#label> "turn visibility on"@en .
 # 
 # https://w3id.org/GerPS-onto/FIMDatenfelder#J000017
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000017> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000017> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000015> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000017> <http://purl.org/dc/terms/description> "This is a `Action`, that can turn on an `Element` visibility property."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000017> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a `Action`, that can turn on an `Element` visibility property."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000017> <http://www.w3.org/2000/01/rdf-schema#label> "Sichtbarkeit ausschalten"@de .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000017> <http://www.w3.org/2000/01/rdf-schema#label> "turn visibility on"@en .
 # 
@@ -607,7 +607,7 @@ _:genid46 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XM
 # https://w3id.org/GerPS-onto/FIMDatenfelder#J000023
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000023> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000023> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000021> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000023> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a SubClass of `Statement`, that refers that the value of a `Datenfeld` not equals a static Value."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000023> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a SubClass of `Statement`, that refers that the value of a `datafield` not equals a static Value."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000023> <http://www.w3.org/2000/01/rdf-schema#label> "Ungleichheit"@de .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000023> <http://www.w3.org/2000/01/rdf-schema#label> "not equals"@en .
 # 
@@ -635,7 +635,7 @@ _:genid46 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XM
 # https://w3id.org/GerPS-onto/FIMDatenfelder#J000027
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000027> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000027> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/GerPS-onto/FIMDatenfelder#J000021> .
-<https://w3id.org/GerPS-onto/FIMDatenfelder#J000027> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a SubClass of `Statement`, that refers that the value of a `Datenfeld` lower equals a static Value."@en .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000027> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a SubClass of `Statement`, that refers that the value of a `datafield` lower equals a static Value."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000027> <http://www.w3.org/2000/01/rdf-schema#label> "kleiner gleich"@de .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000027> <http://www.w3.org/2000/01/rdf-schema#label> "lower Equals"@en .
 # 
@@ -671,6 +671,7 @@ _:genid52 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/
 _:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid53 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/GerPS-onto/FIMDatenfelder#JD000016> .
 _:genid53 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/GerPS-onto/FIMDatenfelder#J000029> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes how often an element occures in a datafieldgroupe or master data schema."@en .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000029> <http://www.w3.org/2000/01/rdf-schema#label> "Auftachen"@de .
 <https://w3id.org/GerPS-onto/FIMDatenfelder#J000029> <http://www.w3.org/2000/01/rdf-schema#label> "Occurrence"@en .
 # 

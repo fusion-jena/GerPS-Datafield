@@ -425,7 +425,7 @@
     "@id" : "https://w3id.org/GerPS-onto/ontology#"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder/0.8"
+    "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder/0.9"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
@@ -436,7 +436,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "This is a Rule in FIM-Datenfelder. It describes the relation between elements of its Stammdatenschemata."
+    "@value" : "This is a Rule in FIM-Datenfelder. It describes the relation between elements of its master data schema."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -468,7 +468,7 @@
     "@value" : "Stammdatenschemata"
   }, {
     "@language" : "en",
-    "@value" : "master data schemes"
+    "@value" : "master data schema"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/GerPS-onto/ontology#Datenfelder"
@@ -488,7 +488,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "This a a Part of a `Stammdatenschemata` in FIM. It can be a `Datenfeld` or a `Datenfeldgruppe`."
+    "@value" : "This a a Part of a `master data schema` in FIM. It can be a `Datenfeld` or a `Datenfeldgruppe`."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "de",
@@ -590,7 +590,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "This is a Trigger, that can hold a full `Condition`, including some `logicOperator`."
+    "@value" : "This is a Trigger, that can hold a full `Condition`, including some `logicOperators`."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "de",
@@ -607,7 +607,7 @@
 }, {
   "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder#J000008",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://purl.org/dc/terms/description" : [ {
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "This is a `Action`, that can be performed on a `Element` from FIM-Datenfeld."
   } ],
@@ -628,7 +628,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "This is a Condition, that holds `logicOperators`and Statements."
+    "@value" : "This is a Condition, that holds `logicOperators` and Statements."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "de",
@@ -643,7 +643,7 @@
 }, {
   "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder#J000011",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://purl.org/dc/terms/description" : [ {
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "This is a `Action`, that can turn off or on a `Element` required property."
   } ],
@@ -660,7 +660,7 @@
 }, {
   "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder#J000012",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://purl.org/dc/terms/description" : [ {
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "This is a `Action`, that can turn off an `Element` required property."
   } ],
@@ -677,7 +677,7 @@
 }, {
   "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder#J000014",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://purl.org/dc/terms/description" : [ {
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "This is a `Action`, that can turn on an `Element` required property."
   } ],
@@ -694,7 +694,7 @@
 }, {
   "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder#J000015",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://purl.org/dc/terms/description" : [ {
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "This is a `Action`, that can turn off or on an `Element` visibility property."
   } ],
@@ -711,7 +711,7 @@
 }, {
   "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder#J000016",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://purl.org/dc/terms/description" : [ {
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "This is a `Action`, that can turn off an `Element` visibility property."
   } ],
@@ -728,7 +728,7 @@
 }, {
   "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder#J000017",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://purl.org/dc/terms/description" : [ {
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "This is a `Action`, that can turn on an `Element` visibility property."
   } ],
@@ -840,7 +840,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "This is a SubClass of `Statement`, that refers that the value of a `Datenfeld` not equals a static Value."
+    "@value" : "This is a SubClass of `Statement`, that refers that the value of a `datafield` not equals a static Value."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "de",
@@ -908,7 +908,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "This is a SubClass of `Statement`, that refers that the value of a `Datenfeld` lower equals a static Value."
+    "@value" : "This is a SubClass of `Statement`, that refers that the value of a `datafield` lower equals a static Value."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "de",
@@ -940,6 +940,10 @@
 }, {
   "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder#J000029",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Describes how often an element occures in a datafieldgroupe or master data schema."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "de",
     "@value" : "Auftachen"
@@ -1294,9 +1298,9 @@
 }, {
   "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder#JP000001",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://purl.org/dc/terms/description" : [ {
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A property, that connects a `Stammdatenschemata` or `element` with an `element`."
+    "@value" : "A property, that connects a `master data schema` or `element` with an `element`."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid1"
@@ -1386,7 +1390,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A Property, that connects a `Stammdatenschemata` or `Element` with a `Rule`."
+    "@value" : "A Property, that connects a `master data schema` or `Element` with a `Rule`."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid6"
@@ -1503,13 +1507,14 @@
 }, {
   "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder#JP000011",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connection to the occurred element."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/GerPS-onto/FIMDatenfelder#J000029"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Connection to the occurred element."
-  }, {
     "@language" : "en",
     "@value" : "hasOccurenceElement"
   }, {
