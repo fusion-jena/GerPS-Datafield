@@ -21,6 +21,10 @@ In the [Path](./Ontologie/Data) there are three example of XDatafield fiels for 
 ## Code
 The Code will be released at [openCode](https://gitlab.opencode.de/opendva) soon.
 
+## Documentation
+
+The cocumentation is available [here](https://fusion-jena.github.io/GerPS-Datafield/)
+
 ## Lizenz
 
 MIT License
