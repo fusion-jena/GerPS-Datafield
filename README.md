@@ -27,8 +27,8 @@ The code will be released at [openCode](https://gitlab.opencode.de/opendva) soon
 
 ## Documentation
 
-The cocumentation is available [here](https://fusion-jena.github.io/GerPS-Datafield/)
+The documentation is available [here](https://fusion-jena.github.io/GerPS-Datafield/).
 
 ## License
 
-This repository is licensed under the MIT-License. For more information, see [License](./LICENSE).
+This repository is licensed under the MIT. For more information, see [License](./LICENSE).
