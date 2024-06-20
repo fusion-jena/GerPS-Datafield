@@ -27,7 +27,7 @@ The code will be released at [openCode](https://gitlab.opencode.de/opendva) soon
 
 ## Documentation
 
-The documentation is available [here](https://fusion-jena.github.io/GerPS-Datafield/).
+The documentation is available [here](https://fusion-jena.github.io/GerPS-Datafield/). The source code for the website is located in the [gh-pages branch](https://github.com/fusion-jena/GerPS-Datafield/tree/gh-pages).
 
 ## License
 
