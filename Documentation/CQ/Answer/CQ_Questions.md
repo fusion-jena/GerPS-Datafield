@@ -96,8 +96,8 @@ PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
 
 SELECT ?Element ?Grundlage
 WHERE {	
-	?Element <https://w3id.org/GerPS-onto/ontology#basiert_auf> ?basis .
-  	?basis rdfs:label ?Grundlage
+	?Element <https://w3id.org/GerPS-onto/ontology#GERPSP001> ?basis .
+  ?basis rdfs:label ?Grundlage
 }
 ```
 
@@ -115,7 +115,7 @@ PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
 
 SELECT ?author
 WHERE {	
-	<https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> xdf:JD000014 ?author .
+	<https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> xdf:JA000014 ?author .
 }
 ``` 
 
