@@ -52,6 +52,8 @@
 | https://w3id.org/GerPS-onto/FIMDatenfelder#JD000010| --- | hat Medientyp              | hasMediaType          |
 | https://w3id.org/GerPS-onto/FIMDatenfelder#JD000011| --- | hat maximale groeße        | hasMaxSize            |
 | https://w3id.org/GerPS-onto/FIMDatenfelder#JD000012| --- | hat Version                | hasVersion            |
-| https://w3id.org/GerPS-onto/FIMDatenfelder#JD000014| --- | hat Autor                  | hasAuthor             |
 | https://w3id.org/GerPS-onto/FIMDatenfelder#JD000015| --- | hat minimales Auftauchen   | hasMinOccurence       |
 | https://w3id.org/GerPS-onto/FIMDatenfelder#JD000016| --- | hat maximales Auftauchen   | hasMaxOccurence       |
+| | | |
+| https://w3id.org/GerPS-onto/FIMDatenfelder#JA000014| --- | hat Autor                  | hasAuthor             |
+
