@@ -10,7 +10,6 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix ontology: <https://w3id.org/GerPS-onto/ontology#> .
-@prefix dct: <http://purl.org/dc/terms/>.
 @base <https://w3id.org/GerPS-onto/FIMDatenfelder#> .
 
 <https://w3id.org/GerPS-onto/FIMDatenfelder#> rdf:type owl:Ontology ;
@@ -18,7 +17,8 @@
                                                owl:imports <http://elite.polito.it/ontologies/eupont.owl> ,
                                                            ontology: ;
                                                terms:creator "Maximilian Raupach" ;
-                                               terms:description "This ontology represents the XDatenfeld format."@en ;
+                                               terms:description "![Diagram](god_diagram.svg)"@de ,
+                                                                 "![Diagram](god_diagram.svg)"@en ;
                                                terms:license """MIT License
 
 Copyright (c) 2023 Maximilian Raupach
@@ -41,9 +41,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."""@en ;
                                                terms:title "Gerps-Onto FIM Datenfelder"@de ;
-                                               owl:versionInfo "0.9" ;
-                                               dct:description "![Diagram](god_diagram.svg)"@de ,
-                                                               "![Diagram](god_diagram.svg)"@en .
+                                               owl:versionInfo "0.9" .
 
 #################################################################
 #    Annotation properties
