@@ -10,10 +10,10 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix ontology: <https://w3id.org/GerPS-onto/ontology#> .
+@prefix dct: <http://purl.org/dc/terms/>.
 @base <https://w3id.org/GerPS-onto/FIMDatenfelder#> .
 
 <https://w3id.org/GerPS-onto/FIMDatenfelder#> rdf:type owl:Ontology ;
-                                               owl:versionInfo 3.0 ;
                                                owl:versionIRI <https://w3id.org/GerPS-onto/FIMDatenfelder/0.9> ;
                                                owl:imports <http://elite.polito.it/ontologies/eupont.owl> ,
                                                            ontology: ;
@@ -41,7 +41,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."""@en ;
                                                terms:title "Gerps-Onto FIM Datenfelder"@de ;
-                                               owl:versionInfo "\"0.9\"" .
+                                               owl:versionInfo "0.9" ;
+                                               dct:description "![Diagram](god_diagram.svg)"@de ,
+                                                               "![Diagram](god_diagram.svg)"@en .
 
 #################################################################
 #    Annotation properties
