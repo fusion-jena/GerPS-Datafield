@@ -7,10 +7,10 @@ Welche Stammdatenschematas gibt es?
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 SELECT *
 WHERE {	
-	?Stammdatenschematas a xdf:J000002 .
+	?Stammdatenschematas a xdf:GPD_0000002 .
 }
 ```
 
@@ -23,10 +23,10 @@ Welche Datenfelder und Datenfeldgruppen enthält ein Stammschemata?
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 SELECT ?Element
 WHERE {	
-  <https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> (xdf:JP000010/xdf:JP000011)+  ?Element .
+  <https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> (xdf:GPD_0000040/xdf:GPD_0000041)+  ?Element .
 }
 ```
 
@@ -39,10 +39,10 @@ Welche Datenfelder und Datenfeldgruppen enthält eine Datenfeldgrupp?
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 SELECT *
 WHERE {	
-	<https://test.schema-repository.fitko.dev/groups/baukasten/G00000253/1.0> (xdf:JP000010/xdf:JP000011)+ ?Elemente .
+	<https://test.schema-repository.fitko.dev/groups/baukasten/G00000253/1.0> (xdf:GPD_0000040/xdf:GPD_0000041)+ ?Elemente .
 } 
 ```
 
@@ -56,10 +56,10 @@ Welche Regeln enthält ein Datenfelder oder eine Datenfeldgruppen?
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 SELECT *
 WHERE {	
-	<https://test.schema-repository.fitko.dev/groups/baukasten/G00001399/1.0> xdf:JP000005 ?Regeln .
+	<https://test.schema-repository.fitko.dev/groups/baukasten/G00001399/1.0> xdf:GPD_0000035 ?Regeln .
 } 
 ```
 
@@ -73,12 +73,12 @@ Welche Regeln enthält ein Stammdatenschemata?
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 
 SELECT ?Regeln
 WHERE {	
-	<https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> (xdf:JP000010/xdf:JP000011)+ ?element .
-  	?element xdf:JP000005 ?Regeln .
+	<https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> (xdf:GPD_0000040/xdf:GPD_0000041)+ ?element .
+  	?element xdf:GPD_0000035 ?Regeln .
 }
 ```
 
@@ -92,11 +92,11 @@ Auf welchen Handlungsgrundlagen beruht ein Stammdatenschemata/Datenfeld/Datenfel
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 
 SELECT ?Element ?Grundlage
 WHERE {	
-	?Element <https://w3id.org/GerPS-onto/ontology#GERPSP001> ?basis .
+	?Element <https://w3id.org/gerps/ontology/process/ontology#GPP_0000021> ?basis .
   ?basis rdfs:label ?Grundlage
 }
 ```
@@ -111,11 +111,12 @@ Wer ist der Verfasser des Stammdatenschamatas?
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+PREFIX dct: <http://purl.org/dc/terms/>
 
 SELECT ?author
 WHERE {	
-	<https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> xdf:JA000014 ?author .
+	<https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> dct:creator ?author .
 }
 ``` 
 
@@ -130,12 +131,12 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 
 Select ?Stammdatenschema ?Element 
 WHERE {
-    ?Stammdatenschema a xdf:J000002 .
-   	?Stammdatenschema xdf:JP000010/xdf:JP000011 ?Element
+    ?Stammdatenschema a xdf:GPD_0000002 .
+   	?Stammdatenschema xdf:GPD_0000040/xdf:GPD_0000041 ?Element
 } 
 ``` 
 
@@ -150,15 +151,15 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 
 Select ?element 
 WHERE {
-    ?sub a xdf:J000002 .
-   	?sub xdf:JP000010/xdf:JP000011 ?element . 
+    ?sub a xdf:GPD_0000002 .
+   	?sub xdf:GPD_0000040/xdf:GPD_0000041 ?element . 
   
-  	?sub2 a xdf:J000002 .
-    ?sub2 xdf:JP000010/xdf:JP000011 ?element .
+  	?sub2 a xdf:GPD_0000002 .
+    ?sub2 xdf:GPD_0000040/xdf:GPD_0000041 ?element .
   	FILTER(?sub != ?sub2)
 } 
 ``` 
@@ -174,39 +175,39 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX df: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX df: <https://w3id.org/gerps/ontology/datafield/>
 
 Construct{
   ?condition 		a 				?class1 .
   
   ?condition		eupont:value	?value3 . 
-  ?condition		df:JP000006	?Field3.
+  ?condition		df:GPD_0000036	?Field3.
   
-  ?condition 		df:JP000002		?leftCondition .
-  ?condition 		df:JP000003		?rightCondition .
+  ?condition 		df:GPD_0000032		?leftCondition .
+  ?condition 		df:GPD_0000033		?rightCondition .
   
 
   ?leftCondition 	  a 				?class2 .
   ?rightCondition 	a 				?class3 .
   
-  ?rightCondition 	df:JP000006 ?Field1 .
-  ?leftCondition 	  df:JP000006 ?Field2 .
+  ?rightCondition 	df:GPD_0000036 ?Field1 .
+  ?leftCondition 	  df:GPD_0000036 ?Field2 .
     
   ?rightCondition 	eupont:value ?value1 .
   ?leftCondition 	eupont:value ?value2 .
 }
 WHERE {
   {
-    ?condition 		df:JP000007 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> 	.
+    ?condition 		df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> 	.
     ?condition 			a 				?class1 .
     FILTER(?class1 != owl:NamedIndividual) .
     
 
-      ?leftCondition 		df:JP000007   <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> 	.
-      ?rightCondition 	df:JP000007 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0>	.
+      ?leftCondition 		df:GPD_0000037   <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> 	.
+      ?rightCondition 	df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0>	.
     
-      ?condition 			df:JP000002		?leftCondition .
-      ?condition 			df:JP000003		?rightCondition . 
+      ?condition 			df:GPD_0000032		?leftCondition .
+      ?condition 			df:GPD_0000033		?rightCondition . 
       
       ?leftCondition 		a 				?class2 .
       ?rightCondition 	a 				?class3 .  
@@ -217,39 +218,39 @@ WHERE {
       FILTER(?class3 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
       FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
       FILTER(?class3 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
-      Filter(?class3 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000009>) .
-      Filter(?class3 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000018>) .
-      Filter(?class3 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000021>) .
-      Filter(?class2 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000009>) .
-      Filter(?class2 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000018>) .
-      Filter(?class2 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000021>) .
+      Filter(?class3 != <https://w3id.org/gerps/ontology/datafield/GPD_0000009>) .
+      Filter(?class3 != <https://w3id.org/gerps/ontology/datafield/GPD_0000018>) .
+      Filter(?class3 != <https://w3id.org/gerps/ontology/datafield/GPD_0000021>) .
+      Filter(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000009>) .
+      Filter(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000018>) .
+      Filter(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000021>) .
 
     OPTIONAL{
-      ?rightCondition 	df:JP000006 	?Field1 .   
+      ?rightCondition 	df:GPD_0000036 	?Field1 .   
       ?rightCOndition 	eupont:value 			?value1 .
     }
     
     OPTIONAL{
-      ?leftCondition 		df:JP000006	?Field2 .
+      ?leftCondition 		df:GPD_0000036	?Field2 .
       ?leftCondition 		eupont:value 			?value2 .
     }
     
     OPTIONAL{
-      ?condition 			df:JP000006 	?Field3 .   
+      ?condition 			df:GPD_0000036 	?Field3 .   
       ?condition 			eupont:value 			?value3 .
     }
   }
   UNION{
-  	?condition 		df:JP000007 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0>	.
+  	?condition 		df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0>	.
     ?condition 			a 				?class1 .
     FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
     FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
-    Filter(?class1 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000009>) .
-    Filter(?class1 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000018>) .
-    Filter(?class1 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000021>) .
+    Filter(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000009>) .
+    Filter(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000018>) .
+    Filter(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000021>) .
     FILTER(?class1 != owl:NamedIndividual) .
 
-      ?condition 			df:JP000006 	?Field3 .   
+      ?condition 			df:GPD_0000036 	?Field3 .   
       ?condition 			eupont:value 			?value3 .
  
   }
@@ -267,39 +268,39 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX df: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX df: <https://w3id.org/gerps/ontology/datafield/>
 
 Construct{
   ?condition 		a 				?class1 .
   
   ?condition		eupont:value	?value3 . 
-  ?condition		df:JP000006	?Field3.
+  ?condition		df:GPD_0000036	?Field3.
   
-  ?condition 		df:JP000002		?leftCondition .
-  ?condition 		df:JP000003		?rightCondition .
+  ?condition 		df:GPD_0000032		?leftCondition .
+  ?condition 		df:GPD_0000033		?rightCondition .
   
 
   ?leftCondition 	  a 				?class2 .
   ?rightCondition 	a 				?class3 .
   
-  ?rightCondition 	df:JP000006 ?Field1 .
-  ?leftCondition 	  df:JP000006 ?Field2 .
+  ?rightCondition 	df:GPD_0000036 ?Field1 .
+  ?leftCondition 	  df:GPD_0000036 ?Field2 .
     
   ?rightCondition 	eupont:value ?value1 .
   ?leftCondition 	eupont:value ?value2 .
 }
 WHERE {
   {
-    ?condition 		df:JP000007 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> 	.
+    ?condition 		df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> 	.
     ?condition 			a 				?class1 .
     FILTER(?class1 != owl:NamedIndividual) .
     
 
-      ?leftCondition 		df:JP000007   <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> 	.
-      ?rightCondition 	df:JP000007 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0>	.
+      ?leftCondition 		df:GPD_0000037   <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> 	.
+      ?rightCondition 	df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0>	.
     
-      ?condition 			df:JP000002		?leftCondition .
-      ?condition 			df:JP000003		?rightCondition . 
+      ?condition 			df:GPD_0000032		?leftCondition .
+      ?condition 			df:GPD_0000033		?rightCondition . 
       
       ?leftCondition 		a 				?class2 .
       ?rightCondition 	a 				?class3 .  
@@ -310,39 +311,39 @@ WHERE {
       FILTER(?class3 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
       FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
       FILTER(?class3 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
-      Filter(?class3 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000009>) .
-      Filter(?class3 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000018>) .
-      Filter(?class3 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000021>) .
-      Filter(?class2 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000009>) .
-      Filter(?class2 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000018>) .
-      Filter(?class2 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000021>) .
+      Filter(?class3 != <https://w3id.org/gerps/ontology/datafield/GPD_0000009>) .
+      Filter(?class3 != <https://w3id.org/gerps/ontology/datafield/GPD_0000018>) .
+      Filter(?class3 != <https://w3id.org/gerps/ontology/datafield/GPD_0000021>) .
+      Filter(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000009>) .
+      Filter(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000018>) .
+      Filter(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000021>) .
 
     OPTIONAL{
-      ?rightCondition 	df:JP000006 	?Field1 .   
+      ?rightCondition 	df:GPD_0000036 	?Field1 .   
       ?rightCOndition 	eupont:value 			?value1 .
     }
     
     OPTIONAL{
-      ?leftCondition 		df:JP000006	?Field2 .
+      ?leftCondition 		df:GPD_0000036	?Field2 .
       ?leftCondition 		eupont:value 			?value2 .
     }
     
     OPTIONAL{
-      ?condition 			df:JP000006 	?Field3 .   
+      ?condition 			df:GPD_0000036 	?Field3 .   
       ?condition 			eupont:value 			?value3 .
     }
   }
   UNION{
-  	?condition 		df:JP000007 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0>	.
+  	?condition 		df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0>	.
     ?condition 			a 				?class1 .
     FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
     FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
-    Filter(?class1 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000009>) .
-    Filter(?class1 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000018>) .
-    Filter(?class1 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000021>) .
+    Filter(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000009>) .
+    Filter(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000018>) .
+    Filter(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000021>) .
     FILTER(?class1 != owl:NamedIndividual) .
 
-      ?condition 			df:JP000006 	?Field3 .   
+      ?condition 			df:GPD_0000036 	?Field3 .   
       ?condition 			eupont:value 			?value3 .
  
   }
@@ -360,32 +361,32 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX df: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX df: <https://w3id.org/gerps/ontology/datafield/>
 
 Construct{
-  ?Action1 df:JP000004 ?Action2 .
+  ?Action1 df:GPD_0000034 ?Action2 .
   ?Action1 a ?class1 .
   ?Action2 a ?class2 .
-  ?Action1 df:JP000008 ?target.
+  ?Action1 df:GPD_0000038 ?target.
 }
 WHERE {
-    ?Action1 df:JP000007 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
-	  ?Action1 df:JP000008 ?target.
+    ?Action1 df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+	  ?Action1 df:GPD_0000038 ?target.
     ?Action1 a ?class1 .
     FILTER(?class1 != owl:NamedIndividual) .
-    FILTER(?class1 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000011>) .
-    FILTER(?class1 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000008>) .
+    FILTER(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000011>) .
+    FILTER(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000008>) .
     FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
     FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
     FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#Action>) .
   
     OPTIONAL{
-      ?Action1 df:JP000004	?Action2.
-      ?Action2 df:JP000007 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+      ?Action1 df:GPD_0000034	?Action2.
+      ?Action2 df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
       ?Action2 a ?class2 .
       FILTER(?class2 != owl:NamedIndividual) .
-      FILTER(?class2 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000011>) .
-      FILTER(?class2 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000008>) .
+      FILTER(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000011>) .
+      FILTER(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000008>) .
       FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
       FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
       FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#Action>) .
@@ -404,32 +405,32 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX df: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX df: <https://w3id.org/gerps/ontology/datafield/>
 
 Construct{
-  ?Action1 df:JP000004 ?Action2 .
+  ?Action1 df:GPD_0000034 ?Action2 .
   ?Action1 a ?class1 .
   ?Action2 a ?class2 .
-  ?Action1 df:JP000008 ?target.
+  ?Action1 df:GPD_0000038 ?target.
 }
 WHERE {
-    ?Action1 df:JP000007 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
-	  ?Action1 df:JP000008 ?target.
+    ?Action1 df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+	  ?Action1 df:GPD_0000038 ?target.
     ?Action1 a ?class1 .
     FILTER(?class1 != owl:NamedIndividual) .
-    FILTER(?class1 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000011>) .
-    FILTER(?class1 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000008>) .
+    FILTER(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000011>) .
+    FILTER(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000008>) .
     FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
     FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
     FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#Action>) .
   
     OPTIONAL{
-      ?Action1 df:JP000004	?Action2.
-      ?Action2 df:JP000007 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+      ?Action1 df:GPD_0000034	?Action2.
+      ?Action2 df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
       ?Action2 a ?class2 .
       FILTER(?class2 != owl:NamedIndividual) .
-      FILTER(?class2 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000011>) .
-      FILTER(?class2 != <https://w3id.org/GerPS-onto/FIMDatenfelder#J000008>) .
+      FILTER(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000011>) .
+      FILTER(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000008>) .
       FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
       FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
       FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#Action>) .
@@ -448,12 +449,12 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 
 Select ?element 
 WHERE {
-    ?sub xdf:JP000007 <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
-    ?sub xdf:JP000008|xdf:JP000006 ?element .
+    ?sub xdf:GPD_0000037 <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+    ?sub xdf:GPD_0000038|xdf:GPD_0000036 ?element .
 } 
 ```
 
@@ -468,12 +469,12 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 
 Select ?element 
 WHERE {
-    ?sub xdf:JP000007 <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
-    ?sub xdf:JP000006 ?element .
+    ?sub xdf:GPD_0000037 <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+    ?sub xdf:GPD_0000036 ?element .
 } 
 ```
 
@@ -488,12 +489,12 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 
 Select ?element 
 WHERE {
-    ?sub xdf:JP000007 <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
-    ?sub xdf:JP000008 ?element .
+    ?sub xdf:GPD_0000037 <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+    ?sub xdf:GPD_0000038 ?element .
 } 
 ```
 
@@ -508,11 +509,11 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 
 Select ?element
 WHERE {
-  	?aktion xdf:JP000008 ?element .
+  	?aktion xdf:GPD_0000038 ?element .
   	?aktion ^eupont:nominalAction/^eupont:hasAction <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
 } 
 ```
@@ -528,12 +529,12 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 
 Select * 
 WHERE {
-    ?Stammschemata a xdf:J000002.
-    ?Stammschemata (xdf:JP000010/xdf:JP000011)+ <https://test.schema-repository.fitko.dev/groups/baukasten/G00001408/1.0> .
+    ?Stammschemata a xdf:GPD_0000002.
+    ?Stammschemata (xdf:GPD_0000040/xdf:GPD_0000041)+ <https://test.schema-repository.fitko.dev/groups/baukasten/G00001408/1.0> .
 } 
 ```
 
@@ -547,11 +548,11 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 
 Select * 
 WHERE {
-	<https://test.schema-repository.fitko.dev/groups/baukasten/G60000093> xdf:JP000009 ?Version .
+	<https://test.schema-repository.fitko.dev/groups/baukasten/G60000093> xdf:GPD_0000039 ?Version .
 } 
 ```
 
@@ -565,12 +566,12 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
-PREFIX xdf: <https://w3id.org/GerPS-onto/FIMDatenfelder#>
+PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
 
 Select * 
 WHERE {
-  	<https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> (xdf:JP000010/xdf:JP000011)+ ?Version .
-    ?Version ^xdf:JP000009 <https://test.schema-repository.fitko.dev/fields/baukasten/F00000462> .
+  	<https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> (xdf:GPD_0000040/xdf:GPD_0000041)+ ?Version .
+    ?Version ^xdf:GPD_0000039 <https://test.schema-repository.fitko.dev/fields/baukasten/F00000462> .
 } 
 ```
 

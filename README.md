@@ -31,4 +31,4 @@ The documentation is available [here](https://fusion-jena.github.io/GerPS-Datafi
 
 ## License
 
-This repository is licensed under the MIT. For more information, see [License](./LICENSE).
+This project is licensed under the [CC BY 4.0](LICENSE).
