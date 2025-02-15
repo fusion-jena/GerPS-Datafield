@@ -34,8 +34,8 @@
                                                    dct:description "![Diagram](god_diagram.svg)" ;
                                                    owl:priorVersion <https://w3id.org/gerps/ontology/datafield/0.9/> ;
                                                    owl:versionInfo "1.0" ;
-                                                   schema:citation "Cite this vocabulary as: openDVA, GerPS-Datafield 4.0"@en ,
-                                                                   "Zitieren Sie dieses Vokabular als: openDVA, GerPS-Datafield 4.0"@de .
+                                                   schema:citation "Cite this vocabulary as: openDVA, GerPS-Datafield 1.0"@en ,
+                                                                   "Zitieren Sie dieses Vokabular als: openDVA, GerPS-Datafield 1.0"@de .
 
 #################################################################
 #    Annotation properties
