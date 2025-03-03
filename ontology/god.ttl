@@ -14,7 +14,7 @@
 @base <https://w3id.org/gerps/ontology/datafield/> .
 
 <https://w3id.org/gerps/ontology/datafield/> rdf:type owl:Ontology ;
-                                                   owl:versionIRI <https://w3id.org/gerps/ontology/datafield/1.0/> ;
+                                                   owl:versionIRI <https://w3id.org/gerps/ontology/datafield/1.1/> ;
                                                    owl:imports <http://elite.polito.it/ontologies/eupont.owl> ,
                                                                gpp: ;
                                                    terms:abstract "Ontologie für den Transfer von FIM(Föderales Informationsmanagement)-Informationen, insbesondere von Formularen, und den darin gespeicherten Daten , die von der öffentlichen Verwaltung verwendet wird um Dienste anzubieten. Zu diesem Zweck bildet die Ontologie den XDatenfeld-Standard ab."@de ,
@@ -26,16 +26,15 @@
                                                                      "Maximilian Raupach" ;
                                                    terms:creator "openDVA" ;
                                                    terms:license <http://creativecommons.org/licenses/by/4.0/> ;
-                                                   terms:modified "2025-02-15" ;
+                                                   terms:modified "03 Mar, 2025" ;
                                                    terms:title "GerPS-Datafield"@en ,
                                                                "GerPS-Datenfelder"@de ;
                                                    vann:preferredNamespacePrefix "god"@en ;
                                                    vann:preferredNamespaceUri "https://w3id.org/gerps/ontology/datafield" ;
-                                                   dct:description "![Diagram](god_diagram.svg)" ;
-                                                   owl:priorVersion <https://w3id.org/gerps/ontology/datafield/0.9/> ;
-                                                   owl:versionInfo "1.0" ;
-                                                   schema:citation "Cite this vocabulary as: openDVA, GerPS-Datafield 1.0"@en ,
-                                                                   "Zitieren Sie dieses Vokabular als: openDVA, GerPS-Datafield 1.0"@de .
+                                                   owl:priorVersion <https://w3id.org/gerps/ontology/datafield/1.0/> ;
+                                                   owl:versionInfo "1.1" ;
+                                                   schema:citation "Cite this vocabulary as: openDVA, GerPS-Datafield 1.1"@en ,
+                                                                   "Zitieren Sie dieses Vokabular als: openDVA, GerPS-Datafield 1.1"@de .
 
 #################################################################
 #    Annotation properties
@@ -154,8 +153,8 @@ schema:citation rdf:type owl:AnnotationProperty .
                                     )
                       ] ;
           rdfs:range :GPD_0000029 ;
-          rdfs:comment "Links a datafield element to its instances."@en ,
-                       "Verknüpft ein Datenfeldelement mit seinen Instanzen."@de ;
+          rdfs:comment "Links a datafield element to its contained instances."@en ,
+                       "Verknüpft ein Datenfeldelement mit enthaltenen Instanzen."@de ;
           rdfs:label "contains datafield element instance"@en ,
                      "enthält Datenfeldinstanz"@de .
 
@@ -178,6 +177,16 @@ schema:citation rdf:type owl:AnnotationProperty .
                        "Verknüpft einen booleschen Operator mit seinen beiden Operanden."@de ;
           rdfs:label "has operand"@en ,
                      "hat Operanden"@de .
+
+###  https://w3id.org/gerps/ontology/datafield/JP000012
+:GPD_0000039 rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:comment "Links an unversioned Element (Group, Field) to its versioned instances."@en ,
+                       "Verknüpft ein nicht versioniertes Element (Gruppe, Feld) mit seinen versionierten Instanzen."@de ;
+          rdfs:label "has versioned instance"@en ,
+                     "hat versionierte Instanz"@de ;
+          rdfs:domain :GPD_0000057 ;
+          rdfs:range :GPD_0000003 .
 
 
 ###  https://w3id.org/gerps/ontology/process/GERPSP001
@@ -360,6 +369,13 @@ gpp:GPP_0000028 rdf:type owl:DatatypeProperty .
          rdfs:label "Datafield rule"@en ,
                     "Datenfeldregel"@de .
 
+###  https://w3id.org/gerps/ontology/datafield/GPD_0000057
+:GPD_0000057 rdf:type owl:Class ;
+         rdfs:comment "A building block as it occurs in XData field forms. As the version is not specified, the module is only a placeholder for a concept and is not directly linked to other data or elements."@en ,
+                      "Ein Bausteins, wie er in XDatenfeld-Formularen vorkommt. Ohne Angabe der Version ist der Baustein nur ein Platzhalter für ein Konzept und ist nicht direkt mit anderen Daten oder Elementen verknüpft."@de ;
+         rdfs:label "Unversioned datafield element"@en ,
+                    "Unversioniertes Datenfeldelement"@de .
+
 
 ###  https://w3id.org/gerps/ontology/datafield/J000002
 :GPD_0000002 rdf:type owl:Class ;
@@ -373,28 +389,28 @@ gpp:GPP_0000028 rdf:type owl:DatatypeProperty .
 ###  https://w3id.org/gerps/ontology/datafield/J000003
 :GPD_0000003 rdf:type owl:Class ;
          rdfs:subClassOf gpp:GPP_0000008 ;
-         rdfs:comment "Bausteine der von XDatenfeld spezifizierten Formulare."@de ,
-                      "Building blocks of forms specified by XDatenfeld."@en ;
-         rdfs:label "Datafield element"@en ,
-                    "Datenfeldelement"@de .
+         rdfs:comment "Die spezifische Version eines Bausteins, wie er in XDatenfeld-Formularen vorkommt."@de ,
+                      "The specific version of a block as it occurs in XDatenfeld-forms."@en ;
+         rdfs:label "Versioned datafield element"@en ,
+                    "Versioniertes Datenfeldelement"@de .
 
 
 ###  https://w3id.org/gerps/ontology/datafield/J000004
 :GPD_0000004 rdf:type owl:Class ;
          rdfs:subClassOf :GPD_0000003 ;
-         rdfs:comment "Der kleinste Baustein von Formularen, wie er in XDatenfeld spezifiziert ist. Er enthält Daten."@de ,
-                      "The smallest building block of forms as specified in XDatenfeld. It contains data directly."@en ;
-         rdfs:label "Datafield"@en ,
-                    "Datenfeld"@de .
+         rdfs:comment "Die spezifische Version des kleinsten Bausteins, wie er in XDatenfeld spezifiziert ist. Er enthält Daten."@de ,
+                      "The specific version of the smallest building block as specified in XDatenfeld. It contains data."@en ;
+         rdfs:label "Versioned datafield"@en ,
+                    "Versioniertes Datenfeld"@de .
 
 
 ###  https://w3id.org/gerps/ontology/datafield/J000005
 :GPD_0000005 rdf:type owl:Class ;
          rdfs:subClassOf :GPD_0000003 ;
-         rdfs:comment "A building block of forms as specified in XDatenfeld. It may contain datafield elements and/or rules."@en ,
-                      "Ein Baustein von Formularen, wie in XDatenfeld spezifiziert. Er kann Datenfeldelemente und/oder Regeln enthalten."@de ;
-         rdfs:label "Datafield group"@en ,
-                    "Datenfeldgruppe"@de .
+         rdfs:comment "A specific version of a building block of forms as specified in XDatenfeld. It may contain datafield elements and/or rules."@en ,
+                      "Die spezifische Version eines Bausteins von Formularen, wie in XDatenfeld spezifiziert. Er kann Datenfeldelemente und/oder Regeln enthalten."@de ;
+         rdfs:label "Versioned datafield group"@en ,
+                    "Versionierte Datenfeldgruppe"@de .
 
 
 ###  https://w3id.org/gerps/ontology/datafield/J000006
