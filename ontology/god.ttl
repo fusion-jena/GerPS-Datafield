@@ -30,6 +30,7 @@
                                                    terms:title "GerPS-Datafield"@en ,
                                                                "GerPS-Datenfelder"@de ;
                                                    vann:preferredNamespacePrefix "god"@en ;
+                                                   dct:description "![Diagram](god_diagram.svg)" ;
                                                    vann:preferredNamespaceUri "https://w3id.org/gerps/ontology/datafield" ;
                                                    owl:priorVersion <https://w3id.org/gerps/ontology/datafield/1.0/> ;
                                                    owl:versionInfo "1.1" ;
