@@ -14,7 +14,6 @@
 @base <https://w3id.org/gerps/ontology/datafield/> .
 
 <https://w3id.org/gerps/ontology/datafield/> rdf:type owl:Ontology ;
-                                                   owl:versionIRI <https://w3id.org/gerps/ontology/datafield/1.1/> ;
                                                    owl:imports <http://elite.polito.it/ontologies/eupont.owl> ,
                                                                gpp: ;
                                                    terms:abstract "Ontologie für den Transfer von FIM(Föderales Informationsmanagement)-Informationen, insbesondere von Formularen, und den darin gespeicherten Daten , die von der öffentlichen Verwaltung verwendet wird um Dienste anzubieten. Zu diesem Zweck bildet die Ontologie den XDatenfeld-Standard ab."@de ,
@@ -26,16 +25,8 @@
                                                                      "Maximilian Raupach" ;
                                                    terms:creator "openDVA" ;
                                                    terms:license <http://creativecommons.org/licenses/by/4.0/> ;
-                                                   terms:modified "03 Mar, 2025" ;
                                                    terms:title "GerPS-Datafield"@en ,
-                                                               "GerPS-Datenfelder"@de ;
-                                                   vann:preferredNamespacePrefix "god"@en ;
-                                                   dct:description "![Diagram](god_diagram.svg)" ;
-                                                   vann:preferredNamespaceUri "https://w3id.org/gerps/ontology/datafield" ;
-                                                   owl:priorVersion <https://w3id.org/gerps/ontology/datafield/1.0/> ;
-                                                   owl:versionInfo "1.1" ;
-                                                   schema:citation "Cite this vocabulary as: openDVA, GerPS-Datafield 1.1"@en ,
-                                                                   "Zitieren Sie dieses Vokabular als: openDVA, GerPS-Datafield 1.1"@de .
+                                                               "GerPS-Datenfelder"@de .
 
 #################################################################
 #    Annotation properties

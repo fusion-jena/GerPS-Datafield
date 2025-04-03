@@ -1,0 +1,463 @@
+competency-questions:
+  -
+    plain: "Welche Stammdatenschematas gibt es?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+      SELECT *
+      WHERE {	
+      	?Stammdatenschematas a xdf:GPD_0000002 .
+      }
+  -
+    plain: "Welche Datenfelder und Datenfeldgruppen enthält ein Stammschemata?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+      SELECT ?Element
+      WHERE {	
+        <https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> (xdf:GPD_0000040/xdf:GPD_0000041)+  ?Element .
+      }
+  -
+    plain: "Welche Datenfelder und Datenfeldgruppen enthält eine Datenfeldgruppe?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+      SELECT *
+      WHERE {	
+      	<https://test.schema-repository.fitko.dev/groups/baukasten/G00000253/1.0> (xdf:GPD_0000040/xdf:GPD_0000041)+ ?Elemente .
+      }
+  -
+    plain: "Welche Regeln enthält ein Datenfelder oder eine Datenfeldgruppen?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+      SELECT *
+      WHERE {	
+      	<https://test.schema-repository.fitko.dev/groups/baukasten/G00001399/1.0> xdf:GPD_0000035 ?Regeln .
+      }
+  -
+    plain: "Welche Regeln enthält ein Stammdatenschemata?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+
+      SELECT ?Regeln
+      WHERE {	
+      	<https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> (xdf:GPD_0000040/xdf:GPD_0000041)+ ?element .
+        	?element xdf:GPD_0000035 ?Regeln .
+      }
+  -
+    plain: "Auf welchen Handlungsgrundlagen beruht ein Stammdatenschemata/Datenfeld/Datenfeldgruppe/(opt.) Regel?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+
+      SELECT ?Element ?Grundlage
+      WHERE {	
+      	?Element <https://w3id.org/gerps/ontology/process/ontology#GPP_0000021> ?basis .
+        ?basis rdfs:label ?Grundlage
+      }
+  -
+    plain: "Wer ist der Verfasser des Stammdatenschamatas?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+      PREFIX dct: <http://purl.org/dc/terms/>
+
+      SELECT ?author
+      WHERE {	
+      	<https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> dct:creator ?author .
+      }
+  -
+    plain: "Welche Datenfelder/Datenfeldgruppen stehen in der ersten Ebene eines Stammdatenschematas?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+
+      Select ?Stammdatenschema ?Element 
+      WHERE {
+          ?Stammdatenschema a xdf:GPD_0000002 .
+         	?Stammdatenschema xdf:GPD_0000040/xdf:GPD_0000041 ?Element
+      }
+  -
+    plain: "Gibt es in der ersten Ebene eines Stammdatenschematas eine Datenfelder/Datenfeldgruppen die auch in anderen Stammdateschematas vorkommen?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+
+      Select ?element 
+      WHERE {
+          ?sub a xdf:GPD_0000002 .
+         	?sub xdf:GPD_0000040/xdf:GPD_0000041 ?element . 
+
+        	?sub2 a xdf:GPD_0000002 .
+          ?sub2 xdf:GPD_0000040/xdf:GPD_0000041 ?element .
+        	FILTER(?sub != ?sub2)
+      }
+  -
+    plain: "Welche Bedingungen hat eine Regel?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX df: <https://w3id.org/gerps/ontology/datafield/>
+
+      Construct{
+        ?condition 		a 				?class1 .
+
+        ?condition		eupont:value	?value3 . 
+        ?condition		df:GPD_0000036	?Field3.
+
+        ?condition 		df:GPD_0000032		?leftCondition .
+        ?condition 		df:GPD_0000033		?rightCondition .
+
+
+        ?leftCondition 	  a 				?class2 .
+        ?rightCondition 	a 				?class3 .
+
+        ?rightCondition 	df:GPD_0000036 ?Field1 .
+        ?leftCondition 	  df:GPD_0000036 ?Field2 .
+
+        ?rightCondition 	eupont:value ?value1 .
+        ?leftCondition 	eupont:value ?value2 .
+      }
+      WHERE {
+        {
+          ?condition 		df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> 	.
+          ?condition 			a 				?class1 .
+          FILTER(?class1 != owl:NamedIndividual) .
+
+
+            ?leftCondition 		df:GPD_0000037   <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> 	.
+            ?rightCondition 	df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0>	.
+
+            ?condition 			df:GPD_0000032		?leftCondition .
+            ?condition 			df:GPD_0000033		?rightCondition . 
+
+            ?leftCondition 		a 				?class2 .
+            ?rightCondition 	a 				?class3 .  
+
+            FILTER(?class2 != owl:NamedIndividual) .
+            FILTER(?class3 != owl:NamedIndividual) .
+            FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
+            FILTER(?class3 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
+            FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
+            FILTER(?class3 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
+            Filter(?class3 != <https://w3id.org/gerps/ontology/datafield/GPD_0000009>) .
+            Filter(?class3 != <https://w3id.org/gerps/ontology/datafield/GPD_0000018>) .
+            Filter(?class3 != <https://w3id.org/gerps/ontology/datafield/GPD_0000021>) .
+            Filter(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000009>) .
+            Filter(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000018>) .
+            Filter(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000021>) .
+
+          OPTIONAL{
+            ?rightCondition 	df:GPD_0000036 	?Field1 .   
+            ?rightCOndition 	eupont:value 			?value1 .
+          }
+
+          OPTIONAL{
+            ?leftCondition 		df:GPD_0000036	?Field2 .
+            ?leftCondition 		eupont:value 			?value2 .
+          }
+
+          OPTIONAL{
+            ?condition 			df:GPD_0000036 	?Field3 .   
+            ?condition 			eupont:value 			?value3 .
+          }
+        }
+        UNION{
+        	?condition 		df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0>	.
+          ?condition 			a 				?class1 .
+          FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
+          FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
+          Filter(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000009>) .
+          Filter(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000018>) .
+          Filter(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000021>) .
+          FILTER(?class1 != owl:NamedIndividual) .
+
+            ?condition 			df:GPD_0000036 	?Field3 .   
+            ?condition 			eupont:value 			?value3 .
+
+        }
+      }
+  -
+    plain: "In welchen Beziehungen stehen die Bedingungen einer Regel zueinander?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX df: <https://w3id.org/gerps/ontology/datafield/>
+
+      Construct{
+        ?condition 		a 				?class1 .
+
+        ?condition		eupont:value	?value3 . 
+        ?condition		df:GPD_0000036	?Field3.
+
+        ?condition 		df:GPD_0000032		?leftCondition .
+        ?condition 		df:GPD_0000033		?rightCondition .
+
+
+        ?leftCondition 	  a 				?class2 .
+        ?rightCondition 	a 				?class3 .
+
+        ?rightCondition 	df:GPD_0000036 ?Field1 .
+        ?leftCondition 	  df:GPD_0000036 ?Field2 .
+
+        ?rightCondition 	eupont:value ?value1 .
+        ?leftCondition 	eupont:value ?value2 .
+      }
+      WHERE {
+        {
+          ?condition 		df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> 	.
+          ?condition 			a 				?class1 .
+          FILTER(?class1 != owl:NamedIndividual) .
+
+
+            ?leftCondition 		df:GPD_0000037   <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> 	.
+            ?rightCondition 	df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0>	.
+
+            ?condition 			df:GPD_0000032		?leftCondition .
+            ?condition 			df:GPD_0000033		?rightCondition . 
+
+            ?leftCondition 		a 				?class2 .
+            ?rightCondition 	a 				?class3 .  
+
+            FILTER(?class2 != owl:NamedIndividual) .
+            FILTER(?class3 != owl:NamedIndividual) .
+            FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
+            FILTER(?class3 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
+            FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
+            FILTER(?class3 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
+            Filter(?class3 != <https://w3id.org/gerps/ontology/datafield/GPD_0000009>) .
+            Filter(?class3 != <https://w3id.org/gerps/ontology/datafield/GPD_0000018>) .
+            Filter(?class3 != <https://w3id.org/gerps/ontology/datafield/GPD_0000021>) .
+            Filter(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000009>) .
+            Filter(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000018>) .
+            Filter(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000021>) .
+
+          OPTIONAL{
+            ?rightCondition 	df:GPD_0000036 	?Field1 .   
+            ?rightCOndition 	eupont:value 			?value1 .
+          }
+
+          OPTIONAL{
+            ?leftCondition 		df:GPD_0000036	?Field2 .
+            ?leftCondition 		eupont:value 			?value2 .
+          }
+
+          OPTIONAL{
+            ?condition 			df:GPD_0000036 	?Field3 .   
+            ?condition 			eupont:value 			?value3 .
+          }
+        }
+        UNION{
+        	?condition 		df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0>	.
+          ?condition 			a 				?class1 .
+          FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
+          FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
+          Filter(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000009>) .
+          Filter(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000018>) .
+          Filter(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000021>) .
+          FILTER(?class1 != owl:NamedIndividual) .
+
+            ?condition 			df:GPD_0000036 	?Field3 .   
+            ?condition 			eupont:value 			?value3 .
+
+        }
+      }
+  -
+    plain: "Welche Aktionen hat eine Regel?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX df: <https://w3id.org/gerps/ontology/datafield/>
+      
+      Construct{
+        ?Action1 df:GPD_0000034 ?Action2 .
+        ?Action1 a ?class1 .
+        ?Action2 a ?class2 .
+        ?Action1 df:GPD_0000038 ?target.
+      }
+      WHERE {
+          ?Action1 df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+      	  ?Action1 df:GPD_0000038 ?target.
+          ?Action1 a ?class1 .
+          FILTER(?class1 != owl:NamedIndividual) .
+          FILTER(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000011>) .
+          FILTER(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000008>) .
+          FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
+          FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
+          FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#Action>) .
+        
+          OPTIONAL{
+            ?Action1 df:GPD_0000034	?Action2.
+            ?Action2 df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+            ?Action2 a ?class2 .
+            FILTER(?class2 != owl:NamedIndividual) .
+            FILTER(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000011>) .
+            FILTER(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000008>) .
+            FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
+            FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
+            FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#Action>) .
+          }
+      }
+  -
+    plain: "In welcher Reihenfolge stehen die Aktionen einer Regel?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX df: <https://w3id.org/gerps/ontology/datafield/>
+
+      Construct{
+        ?Action1 df:GPD_0000034 ?Action2 .
+        ?Action1 a ?class1 .
+        ?Action2 a ?class2 .
+        ?Action1 df:GPD_0000038 ?target.
+      }
+      WHERE {
+          ?Action1 df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+      	  ?Action1 df:GPD_0000038 ?target.
+          ?Action1 a ?class1 .
+          FILTER(?class1 != owl:NamedIndividual) .
+          FILTER(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000011>) .
+          FILTER(?class1 != <https://w3id.org/gerps/ontology/datafield/GPD_0000008>) .
+          FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
+          FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
+          FILTER(?class1 != <http://elite.polito.it/ontologies/eupont.owl#Action>) .
+
+          OPTIONAL{
+            ?Action1 df:GPD_0000034	?Action2.
+            ?Action2 df:GPD_0000037 	<https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+            ?Action2 a ?class2 .
+            FILTER(?class2 != owl:NamedIndividual) .
+            FILTER(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000011>) .
+            FILTER(?class2 != <https://w3id.org/gerps/ontology/datafield/GPD_0000008>) .
+            FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleAxiom>) .
+            FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#RuleNominalAxiom>) .
+            FILTER(?class2 != <http://elite.polito.it/ontologies/eupont.owl#Action>) .
+          }
+      } 
+  -
+    plain: "Welche Datenfelder/Datenfeldgruppen stehen mit einer bestimmten Regel in Verbindung?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+
+      Select ?element 
+      WHERE {
+          ?sub xdf:GPD_0000037 <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+          ?sub xdf:GPD_0000038|xdf:GPD_0000036 ?element .
+      }
+  -
+    plain: "Welche Datenfelder/Datenfeldgruppen stehen mit der Bedinengung einer bestimmten Regel in Verbindung?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+
+      Select ?element 
+      WHERE {
+          ?sub xdf:GPD_0000037 <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+          ?sub xdf:GPD_0000036 ?element .
+      }
+  -
+    plain: "Auf welchen Datenfeldern/Datenfeldgruppen wird eine bestimmte Aktion ausgeführt?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+
+      Select ?element 
+      WHERE {
+          ?sub xdf:GPD_0000037 <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+          ?sub xdf:GPD_0000038 ?element .
+      }
+  -
+    plain: "Welche Aktionen werden auf welchen Datenfeldern/Datenfeldgruppen in einer bestimmten Regel ausgeführt?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+
+      Select ?element
+      WHERE {
+        	?aktion xdf:GPD_0000038 ?element .
+        	?aktion ^eupont:nominalAction/^eupont:hasAction <https://test.schema-repository.fitko.dev/rules/baukasten/R00000042/1.0> .
+      }
+  -
+    plain: "In welchen Stammdatenschematas kommen bestimmte Datenfelder/Datenfeldgruppen vor?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+
+      Select * 
+      WHERE {
+          ?Stammschemata a xdf:GPD_0000002.
+          ?Stammschemata (xdf:GPD_0000040/xdf:GPD_0000041)+ <https://test.schema-repository.fitko.dev/groups/baukasten/G00001408/1.0> .
+      }
+  -
+    plain: "Welche Versionen einer bestimmten Struktur existieren?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+
+      Select * 
+      WHERE {
+      	<https://test.schema-repository.fitko.dev/groups/baukasten/G60000093> xdf:GPD_0000039 ?Version .
+      }
+  -
+    plain: "Welche Version einer Struktur sind in einem bestimmten Stammdatenschemata enthalten?"
+    query: |-
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX eupont: <http://elite.polito.it/ontologies/eupont.owl#>
+      PREFIX xdf: <https://w3id.org/gerps/ontology/datafield/>
+
+      Select * 
+      WHERE {
+        	<https://test.schema-repository.fitko.dev/schema/baukasten/S00000094/1.0> (xdf:GPD_0000040/xdf:GPD_0000041)+ ?Version .
+          ?Version ^xdf:GPD_0000039 <https://test.schema-repository.fitko.dev/fields/baukasten/F00000462> .
+      }
