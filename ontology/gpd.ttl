@@ -291,6 +291,13 @@ or provides information about the field content changeability. The valid values 
           rdfs:label "has mediatype"@en ,
                      "hat Medientyp"@de .
 
+:GPD_0000058 rdf:type owl:DatatypeProperty ;
+          rdfs:domain :GPD_0000029 ;
+          rdfs:range xsd:integer ;
+          rdfs:label "has cannonical sequence index"@en ,
+                     "hat kanonischen Sequenzindex"@de ;
+          rdfs:comment "Gibt für eine Datenfeldelementinstanz an, das wie vielte Kind seines Elternelement es ist."@de ,
+                       "Indicates the ordinal position of a data field element instance among its parent element's children."@en .
 
 ###  https://w3id.org/gerps/ontology/datafield/JD000011
 :GPD_0000053 rdf:type owl:DatatypeProperty ;
