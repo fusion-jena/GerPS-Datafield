@@ -55,16 +55,6 @@ terms:title rdf:type owl:AnnotationProperty .
 ###  https://schema.org/citation
 schema:citation rdf:type owl:AnnotationProperty .
 
-
-###  https://w3id.org/gerps/ontology/datafield/JA000001
-:GPD_0000031 rdf:type owl:AnnotationProperty ;
-          rdfs:comment "Der Name des Autoren."@de ,
-                       "The name of the author."@en ;
-          rdfs:label "has author"@en ,
-                     "hat Autor"@de ;
-          rdfs:domain :GPD_0000002 .
-
-
 #################################################################
 #    Object Properties
 #################################################################
@@ -307,22 +297,6 @@ or provides information about the field content changeability. The valid values 
                        "This property may only be used for data fields of type “file”. It defines the maximum size in bytes."@en ;
           rdfs:label "has max size"@en ,
                      "hat maximale Größe"@de .
-
-
-###  https://w3id.org/gerps/ontology/datafield/JD000012
-:GPD_0000054 rdf:type owl:DatatypeProperty ,
-                   owl:FunctionalProperty ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :GPD_0000002
-                                      :GPD_0000003
-                                    )
-                      ] ;
-          rdfs:range xsd:string ;
-          rdfs:comment "Die Version des Datenfeldelements."@de ,
-                       "The version of the data field element."@en ;
-          rdfs:label "has version"@en ,
-                     "hat Version"@de .
-
 
 ###  https://w3id.org/gerps/ontology/datafield/JD000015
 :GPD_0000055 rdf:type owl:DatatypeProperty ;
