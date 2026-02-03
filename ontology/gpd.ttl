@@ -173,11 +173,14 @@ schema:citation rdf:type owl:AnnotationProperty .
                         "hat Operanden"@de .
 
 
-###  https://w3id.org/gerps/ontology/datafield/GPP_0000060
-:GPP_0000060 rdf:type owl:ObjectProperty ;
+###  https://w3id.org/gerps/ontology/datafield/GPD_0000060
+:GPD_0000060 rdf:type owl:ObjectProperty ;
              rdfs:domain :GPD_0000004 ;
-             rdfs:range :GPP_0000059 ;
-             rdfs:label "hat Ausawhloption"@de .
+             rdfs:range :GPD_0000059 ;
+             rdfs:comment "Links a versioned datafield to its selection options."@en ,
+                          "Verknüpft ein versioniertes Datenfeld mit seinen Auswahloptionen."@de ;
+             rdfs:label "has selection option"@en ,
+                        "hat Auswahloption"@de .
 
 
 ###  https://w3id.org/gerps/ontology/process/GPP_0000021
@@ -323,17 +326,21 @@ or provides information about the field content changeability. The valid values 
 
 ###  https://w3id.org/gerps/ontology/datafield/GPD_0000058
 :GPD_0000058 rdf:type owl:DatatypeProperty ;
-             rdfs:domain :GPD_0000029 ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :GPD_0000029
+                                         :GPD_0000059
+                                       )
+                         ] ;
              rdfs:range xsd:integer ;
-             rdfs:comment "Gibt für eine Datenfeldelementinstanz an, das wie vielte Kind seines Elternelement es ist."@de ,
-                          "Indicates the ordinal position of a data field element instance among its parent element's children."@en ;
+             rdfs:comment "Gibt die ordinale Position eines Elements unter seinen Geschwisterelementen an."@de ,
+                          "Indicates the ordinal position of an element among its sibling elements."@en ;
              rdfs:label "has cannonical sequence index"@en ,
                         "hat kanonischen Sequenzindex"@de .
 
 
-###  https://w3id.org/gerps/ontology/datafield/GPP_0000061
-:GPP_0000061 rdf:type owl:DatatypeProperty ;
-             rdfs:domain :GPP_0000059 ;
+###  https://w3id.org/gerps/ontology/datafield/GPD_0000061
+:GPD_0000061 rdf:type owl:DatatypeProperty ;
+             rdfs:domain :GPD_0000059 ;
              rdfs:range rdf:langString ;
              rdfs:comment "Gibt an, welcher Code einer Auswahloption zugeordnet ist."@de ,
                           "Indicates the code of a selection option."@en ;
@@ -602,8 +609,8 @@ gpp:GPP_0000028 rdf:type owl:DatatypeProperty .
                         "Unversioniertes Datenfeldelement"@de .
 
 
-###  https://w3id.org/gerps/ontology/datafield/GPP_0000059
-:GPP_0000059 rdf:type owl:Class ;
+###  https://w3id.org/gerps/ontology/datafield/GPD_0000059
+:GPD_0000059 rdf:type owl:Class ;
              rdfs:comment "An entry in a selection list."@en ,
                           "Ein Eintrag einer Auswahlliste."@de ;
              rdfs:label "Auswahloption"@de ,
