@@ -14,7 +14,7 @@
 @base <https://w3id.org/gerps/ontology/datafield/> .
 
 <https://w3id.org/gerps/ontology/datafield/> rdf:type owl:Ontology ;
-                                              owl:imports <http://elite.polito.it/ontologies/eupont.owl> ,
+                                              owl:imports <https://elite.polito.it/ontologies/eupont.owl> ,
                                                           gpp: ;
                                               terms:abstract "Ontologie für den Transfer von FIM(Föderales Informationsmanagement)-Informationen, insbesondere von Formularen, und den darin gespeicherten Daten , die von der öffentlichen Verwaltung verwendet wird um Dienste anzubieten. Zu diesem Zweck bildet die Ontologie den XDatenfeld-Standard ab."@de ,
                                                              "Ontology used for transferring FIM(Federal Information Management)-information, specifically forms, and data stored in them, used by public services. To achieve this, it maps the XDatenfeld-standard."@en ;
